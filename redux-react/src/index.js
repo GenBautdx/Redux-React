@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Import the React and TeactDom Libreries
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+
+function getButtonText(){
+    return 'Click on me!';
+}
+
+// Create a react componet
+
+const App = () => {
+  const buttonText = "Click Me";
+  return (
+    <div>
+      <label clasName="label" for="name">
+        Enter name:
+      </label>
+      <input id="name" type={"text"}></input>
+      <button style={{ backgroundColor: "blue", color: "white" }}>
+        {getButtonText()}
+      </button>
+    </div>
+  );
+};
+// taje the ract componet and show it one the screen
+
+ReactDOM.render(<App />, document.querySelector("#root"));
